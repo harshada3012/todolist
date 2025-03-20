@@ -1,0 +1,27 @@
+<html>
+    <body>
+        <input id="input" type="text"> 
+        <button onclick="addTask()">add</button>
+
+        <ol id="list">
+            <!-- <li id="task-1">innertext + <button></li> -->
+        </ol>
+
+        <script>
+            const input = document.getElementById('input');
+            const list = document.getElementById('list');
+            function addTask() {
+                const newLi = document.createElement('li'); // <li></li>
+
+                newLi.innerHTML = input.value + ' <button onclick="deleteTask(event)">Del</button>'; // <li>sdkjsd <button>Del</button> </li>
+                list.appendChild(newLi);
+                input.value = '';
+            }
+
+            function deleteTask(event) {
+                console.log(event.target.parentNode.remove());
+                
+            }
+        </script>
+    </body>
+</html>
